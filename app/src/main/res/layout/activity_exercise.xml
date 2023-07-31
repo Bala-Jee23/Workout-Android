@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/mainwrkout"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseActivity">
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbarExercise"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="?android:attr/actionBarSize"
+        android:theme="@style/toolbarTheme"
+        android:titleTextColor="@color/design_default_color_primary"
+        />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="GET READY"
+        android:textColor="#25870A"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/flRestView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
+        app:layout_constraintVertical_bias="0.874" />
+    <ImageView
+        android:id="@+id/imageExercise"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/exerciseName"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarExercise"
+        android:src="@drawable/ic_jumping_jacks"/>
+
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise Name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textColor="#AE4EE1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageExercise"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/flRestView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/item_circular_color_accent_boarder"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:max="10"
+            android:progress="30"
+            android:background="@drawable/circular_progress_gray"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:rotation="-90"
+            android:indeterminate="false"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/item_circular_color_accent_background"
+            >
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/tvTimer"
+             android:layout_gravity="center"
+             android:textSize="25sp"
+             android:textColor="#FFFFFF"
+             android:textStyle="bold"
+             tools:text="10"/>
+        </LinearLayout>
+
+        </FrameLayout>
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/flRestView"
+        android:id="@+id/upcomingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="#C7D516"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/tvUpcomingExerciseName"
+        android:text="UPCOMING EXERCISE : "
+        android:textSize="16sp" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/upcomingLabel"
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:textColor="#C7D516"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Exercise Name" />
+
+
+    <FrameLayout
+        android:id="@+id/flExerciseView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/item_circular_color_accent_boarder"
+        app:layout_constraintTop_toBottomOf="@id/exerciseName">
+
+        <ProgressBar
+            android:id="@+id/progressBarExercise"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:max="30"
+            android:progress="300"
+            android:background="@drawable/circular_progress_gray"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:rotation="-90"
+            android:indeterminate="false"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/item_circular_color_accent_background"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTimerExercise"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                tools:text="30"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExerciseStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scrollIndicators="none"
+        app:layout_constraintTop_toBottomOf="@+id/flExerciseView" >
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
